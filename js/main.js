@@ -41,8 +41,14 @@ getPersonData()
 
 // FILTER THE DATA
 function filterData(searchVal) {
+    // IT CAN WORK WITH SELECTED LI ELEMENTS WITHOUT ARRAY AS WELL
+    const listUsersElements = document.querySelectorAll('li')
+
     // list items array holds all user li with all information about that html element, so we check if input val has some characters inside of user element and add or remove class from it
-    listItems.forEach(user => {
+    // listItems.forEach(user => {
+
+    listUsersElements.forEach(user => {
+
         if (user.innerText.toLowerCase().includes(searchVal.toLowerCase())) {
             user.classList.remove('hide')
         } else {
